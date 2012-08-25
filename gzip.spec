@@ -1,7 +1,7 @@
 Summary:	GNU gzip file compression
 Name:		gzip
 Version:	1.5
-Release:	2
+Release:	3
 License:	GPL
 Group:		Applications/Archiving
 Source0:	http://ftp.gnu.org/gnu/gzip/%{name}-%{version}.tar.gz
@@ -13,11 +13,8 @@ URL:		http://www.gnu.org/software/gzip/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	texinfo
-Requires:	mktemp
-Provides:	gzip(rsyncable)
+Requires:	coreutils
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		specflags	-fomit-frame-pointer
 
 %description
 This is the popular GNU file compression and decompression program,
@@ -48,10 +45,10 @@ install -d $RPM_BUILD_ROOT%{_mandir}/pt/man1
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	-p	/sbin/postshell
+%post	-p /usr/sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
-%postun	-p	/sbin/postshell
+%postun	-p /usr/sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
 %files
