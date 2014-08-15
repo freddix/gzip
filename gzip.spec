@@ -1,14 +1,11 @@
 Summary:	GNU gzip file compression
 Name:		gzip
 Version:	1.6
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Archiving
 Source0:	http://ftp.gnu.org/gnu/gzip/%{name}-%{version}.tar.gz
 # Source0-md5:	38603cb2843bf5681ff41aab3bcd6a20
-Patch0:		%{name}-mktemp.patch
-Patch1:		%{name}-stderr.patch
-Patch2:		%{name}-noppid.patch
 URL:		http://www.gnu.org/software/gzip/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -22,9 +19,6 @@ gzip.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
-%patch2 -p1
 
 %build
 %{__libtoolize}
