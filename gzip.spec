@@ -1,7 +1,7 @@
 Summary:	GNU gzip file compression
 Name:		gzip
 Version:	1.6
-Release:	2
+Release:	3
 License:	GPL
 Group:		Applications/Archiving
 Source0:	http://ftp.gnu.org/gnu/gzip/%{name}-%{version}.tar.gz
